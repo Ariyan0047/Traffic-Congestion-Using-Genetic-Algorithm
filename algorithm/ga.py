@@ -12,7 +12,7 @@ def objective(value):
 # PROBLEM STATEMENT
 problem = structure()
 problem.costfunc = objective
-problem.nvar = 5
+problem.nvar = 8
 problem.varmin = -10
 problem.varmax = 10
 

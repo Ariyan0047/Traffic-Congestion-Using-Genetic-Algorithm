@@ -6,6 +6,7 @@ import traci
 import random
 import numpy as np
 import matplotlib.pyplot as plt
+import pandas as pd
 from algorithm import ga
 
 
@@ -17,7 +18,7 @@ else:
     sys.exit("Please declare the environment variable 'SUMO_HOME'")
 
 sumoBinary = "C:\\Program Files (x86)\\Eclipse\\Sumo\\bin\\sumo-gui"
-sumoCmd = [sumoBinary, "-c", "DATASETS/Dhanmondi.sumocfg"]
+sumoCmd = [sumoBinary, "-c", "DHANMONDI_DATASETS/Dhanmondi.sumocfg"]
 
 
 # CONTROL STATE
@@ -42,14 +43,22 @@ def main(value1, value2, value3):
 
 
 # CONTROL LOOP
-for _ in range(0, 4):
+for _ in range(0, 10):
 
     # RUNNING THE ALGORITHM
     output_result_01 = ga.run_ga(ga.problem, ga.params)
     output_result_02 = ga.run_ga(ga.problem, ga.params)
     output_result_03 = ga.run_ga(ga.problem, ga.params)
 
-    # plt.semilogy(output_result_01.best_cost)
+    plt.plot(output_result_01.best_cost)
+    plt.xlim(0, ga.params.maxit)
+    plt.xlabel("Iterations")
+    plt.ylabel("Best Cost")
+    plt.title("GENETIC ALGORITHM")
+    plt.grid(True)
+    plt.show()
+
+    # plt.plot(output_result_02.best_cost)
     # plt.xlim(0, ga.params.maxit)
     # plt.xlabel("Iterations")
     # plt.ylabel("Best Cost")
