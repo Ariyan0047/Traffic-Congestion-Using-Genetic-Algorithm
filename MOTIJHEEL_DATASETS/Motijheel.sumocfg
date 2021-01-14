@@ -3,7 +3,7 @@
 	<input>
 		<net-file value="Motijheel.net.xml" />
 		<route-files value="Motijheel.rou.xml" />
-		<!-- <additional-files value="Dhanmondi_additional.xml"/> -->
+		<additional-files value="Motijheel_additional.xml" />
 	</input>
 	<time>
 		<begin value="0" />

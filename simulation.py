@@ -19,6 +19,7 @@ else:
 
 sumoBinary = "C:\\Program Files (x86)\\Eclipse\\Sumo\\bin\\sumo-gui"
 sumoCmd = [sumoBinary, "-c", "DHANMONDI_DATASETS/Dhanmondi.sumocfg"]
+# sumoCmd = [sumoBinary, "-c", "MOTIJHEEL_DATASETS/Motijheel.sumocfg"]
 
 
 # CONTROL STATE
@@ -43,7 +44,7 @@ def main(value1, value2, value3):
 
 
 # CONTROL LOOP
-for _ in range(0, 10):
+for _ in range(0, 4):
 
     # RUNNING THE ALGORITHM
     output_result_01 = ga.run_ga(ga.problem, ga.params)

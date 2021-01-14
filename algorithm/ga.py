@@ -19,8 +19,8 @@ problem.varmax = 10
 
 # PARAMETER STATEMENT
 params = structure()
-params.maxit = 20
-params.npop = 20
+params.maxit = 50
+params.npop = 100
 params.pc = 1
 params.gamma = 0.1
 params.sigma = 0.1
@@ -104,14 +104,14 @@ def run_ga(problem, params):
 ############################## MERGE,SORT,SELECTION PHASE ###########################
 
         population += popc
-        population = sorted(population, key=lambda x: x.cost)
+        population = sorted(population, key=lambda x: x.cost, reverse=True)
         population = population[0:population_number]
 
         # STORING BEST COST VALUE
         best_cost[iterations] = best_solution.cost
 
         # SHOWING RESULTS
-        print(f"Iteration: {iterations} Best Cost: {best_cost[iterations]}")
+        # print(f"Iteration: {iterations} Best Cost: {best_cost[iterations]}")
 
     # OUTPUT RESULT
     output = structure()
